@@ -60,17 +60,23 @@ An integrated smart home automation system powered by **ESP32** and **MicroPytho
 
 ---
 
-## 📦 Dependencies
+## 📁 Repository Structure
 
-Ensure the following MicroPython libraries are loaded onto your ESP32 board:
-* `umqtt.simple`
-* `esp32_i2c_lcd.py` / `lcd_api.py`
-* `urequests`
-* `ntptime` (built-in)
-* `dht` (built-in)
-
----
-
+```text
+Smart Home Project/
+├── AWS.py                    # AWS IoT Core MQTT connection and SSL setup
+├── dht11.py                  # Low-level DHT11 sensor driver
+├── DHT11_LCD.py              # Sensor-to-LCD formatting and display integration
+├── lcd_display.py            # I2C driver for 16x2 LCD screen
+├── main.py                   # System entry point and primary event loop
+├── mqtt_node.py              # HiveMQ Cloud MQTT connection and handler
+├── Readme.md                 # Project documentation
+├── servo_motor.py            # Servo motor PWM control driver
+├── Tel_bot.py                # Telegram Bot notification handler
+├── ultrasonic_sys.py         # Ultrasonic distance measurement module
+├── voice_assistant_ESP32.py  # ESP32-side voice command parsing and actuation
+├── voice_assistant_PC.py     # PC-side speech-to-text and MQTT command publisher
+└── WiFi.py
 ## 🚀 Setup & Execution
 
 1. **AWS Certificates:** Upload your AWS IoT certificates (`root.pem`, `device.crt`, `private.key`) directly to the ESP32 root filesystem.
