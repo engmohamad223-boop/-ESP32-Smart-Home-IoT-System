@@ -62,7 +62,7 @@ An integrated smart home automation system powered by **ESP32** and **MicroPytho
 
 ## 📁 Repository Structure
 
-```text
+`
 Smart Home Project/
 ├── AWS.py                    # AWS IoT Core MQTT connection and SSL setup
 ├── dht11.py                  # Low-level DHT11 sensor driver
