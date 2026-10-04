@@ -59,23 +59,20 @@ An integrated smart home automation system powered by **ESP32** and **MicroPytho
 * **`led/control`**: Subscribes to JSON state for controlling the onboard LED.
 
 ---
-
-## 📁 Repository Structure
-
-`
-Smart Home Project/
-├── AWS.py                    # AWS IoT Core MQTT connection and SSL setup
-├── dht11.py                  # Low-level DHT11 sensor driver
-├── DHT11_LCD.py              # Sensor-to-LCD formatting and display integration
-├── lcd_display.py            # I2C driver for 16x2 LCD screen
-├── main.py                   # System entry point and primary event loop
-├── mqtt_node.py              # HiveMQ Cloud MQTT connection and handler
-├── Readme.md                 # Project documentation
-├── servo_motor.py            # Servo motor PWM control driver
-├── Tel_bot.py                # Telegram Bot notification handler
-├── ultrasonic_sys.py         # Ultrasonic distance measurement module
-├── voice_assistant_ESP32.py  # ESP32-side voice command parsing and actuation
-├── voice_assistant_PC.py     # PC-side speech-to-text and MQTT command publisher
+File Name,Category,Functionality
+main.py,Core,"Main controller that runs the super-loop, handles network reconnection, timing tasks, and orchestrates modules."
+WiFi.py,Network,"Manages WiFi connection routines, auto-reconnects, and synchronizes real-time clock using NTP (ntptime)."
+AWS.py,Cloud,"Configures SSL certificates (root.pem, device.crt, private.key) and handles AWS IoT Core telemetry publishing."
+mqtt_node.py,Cloud,Manages secure connection to HiveMQ Cloud MQTT broker and handles subscriptions for remote commands.
+dht11.py,Sensor,Reads temperature and humidity raw data from the DHT11 sensor on GPIO 4.
+ultrasonic_sys.py,Sensor,Sends pulses and measures echo duration using HC-SR04 to calculate obstacle distance in cm.
+servo_motor.py,Actuator,Sets PWM duty cycle on GPIO 5 to control SG90 servo position (Door Open/Close).
+lcd_display.py,Display,Handles low-level I2C commands to control the 16x2 Liquid Crystal Display.
+DHT11_LCD.py,Display,Formats climate metrics into readable strings and updates the LCD display screen.
+Tel_bot.py,Alert,Formats HTTP POST payloads and sends alert messages via Telegram Bot API upon high temperature.
+voice_assistant_ESP32.py,Voice,Processes MQTT command strings received on the board and triggers corresponding GPIO actions.
+voice_assistant_PC.py,PC Application,"Python script running on host PC that captures user speech, converts it to commands, and publishes to HiveMQ."
+Readme.md,Documentation,Complete project documentation and instruction guide.   # PC-side speech-to-text and MQTT command publisher
 └── WiFi.py
 ## 🚀 Setup & Execution
 
