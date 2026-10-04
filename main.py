@@ -10,14 +10,14 @@ from umqtt.simple import MQTTClient
 from esp32_i2c_lcd import I2cLcd
 
 
-SSID: str = "WEC2ED50"
-PASS: str = "aa046646"
+SSID: str = ""
+PASS: str = ""
 
-BOT_TOKEN = "8797987896:AAFAFyeYGS-JEcvDuI_k09kqcGE98LKGFm0"
-CHAT_ID = "5405697540"
+BOT_TOKEN = ""
+CHAT_ID = ""
 
-AWS_THING_NAME: str = "ESP_Thing"
-AWS_ENDPOINT: str = "a3t4szt6m9csuv-ats.iot.us-east-1.amazonaws.com"
+AWS_THING_NAME: str = ""
+AWS_ENDPOINT: str = ""
 AWS_TOPIC_PUB: str = "sensor"
 AWS_TOPIC_SUB: str = "led/control"
 
@@ -36,10 +36,10 @@ except Exception as e:
     SSL_CONFIG_AWS = {}
 
 HIVEMQ_CLIENT_ID = "ESP32_SmartHome_Master"
-HIVEMQ_BROKER = "135dedd9836c437b9172ab35864ccbe3.s1.eu.hivemq.cloud"
+HIVEMQ_BROKER = ""
 HIVEMQ_PORT = 8883
-HIVEMQ_USER = "mohamedhawary"
-HIVEMQ_PASS = "87654321"
+HIVEMQ_USER = ""
+HIVEMQ_PASS = ""
 
 HIVEMQ_TOPIC_COMMANDS = "home/commands"
 HIVEMQ_TOPIC_LED = "home/esp32/led"
